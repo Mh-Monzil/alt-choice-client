@@ -24,11 +24,11 @@ const Navbar = () => {
       ];
 
   return (
-    <header className="p-4 sticky top-0">
+    <header className="p-4 sticky top-0 bg-white">
       <div className="container flex justify-between items-center h-16 mx-auto">
         <Link to='/' className="flex items-center justify-center gap-2">
-        <img className="w-12 h-12" src={logo} alt="" />
-        <span className="font-bold text-3xl">AltChoice.</span>
+        <img className="w-10 h-10 md:w-12 md:h-12" src={logo} alt="" />
+        <span className="font-bold text-2xl md:text-3xl">AltChoice.</span>
         </Link>
         <ul className="items-stretch hidden space-x-6 md:flex">
         {
