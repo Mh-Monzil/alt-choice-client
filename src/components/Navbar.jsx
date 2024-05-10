@@ -24,7 +24,7 @@ const Navbar = () => {
       ];
 
   return (
-    <header className="p-4 sticky top-0 bg-white">
+    <header className="p-4 sticky top-0 bg- z-50 bg-white">
       <div className="container flex justify-between items-center h-16 mx-auto">
         <Link to='/' className="flex items-center justify-center gap-2">
         <img className="w-10 h-10 md:w-12 md:h-12" src={logo} alt="" />
