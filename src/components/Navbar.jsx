@@ -48,7 +48,7 @@ const Navbar = () => {
         <ul
           className={`${
             menu
-              ? "absolute md:hidden top-24 left-6 p-4 pr-40 space-y-2 duration-700 ease-in-out shadow-md rounded-md z-50 bg-white"
+              ? "absolute md:hidden top-24 left-4 sm:left-16 p-4 pr-40 space-y-2 duration-700 ease-in-out shadow-md rounded-md z-50 bg-white"
               : "hidden"
           } `}
         >
