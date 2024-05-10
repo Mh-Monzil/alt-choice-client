@@ -63,7 +63,7 @@ const Register = () => {
                 id="name"
                 autoComplete="name"
                 name="name"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
                 type="text"
               />
             </div>
@@ -78,7 +78,7 @@ const Register = () => {
                 id="photo"
                 autoComplete="photo"
                 name="photo"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
                 type="text"
               />
             </div>
@@ -93,7 +93,7 @@ const Register = () => {
                 id="LoggingEmailAddress"
                 autoComplete="email"
                 name="email"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
                 type="email"
               />
             </div>
@@ -112,7 +112,7 @@ const Register = () => {
                 id="loggingPassword"
                 autoComplete="current-password"
                 name="password"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
                 type="password"
               />
             </div>

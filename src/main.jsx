@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import ErrorPage from "./pages/ErrorPage";
 import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
+import AddQueries from "./pages/AddQueries";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "/registration",
         element: <Register />,
       },
+      {
+        path: '/add-queries',
+        element: <AddQueries />
+      }
     ],
   },
 ]);
