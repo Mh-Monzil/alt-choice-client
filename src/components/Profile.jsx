@@ -13,7 +13,7 @@ const Profile = () => {
     console.log(user,"profile");
     const {displayName, photoURL} = user;
     return (
-    <div onClick={() => setShowDropdown(!showDropdown)} className="dropdown dropdown-end flex items-center text-black relative" >
+    <div onClick={() => setShowDropdown(!showDropdown)} className="dropdown dropdown-end flex items-center text-black relative ml-20" >
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-12 h-12 rounded-full border-2">
           <img alt="profile" className="rounded-full" src={photoURL && photoURL} />

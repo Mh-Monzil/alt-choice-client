@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import logo from "../../public/alt.png";
 import UseAuth from "../hooks/useAuth";
 import Profile from "./Profile";
+import ScaleLoader from 'react-spinners/ScaleLoader';
+
+
 const Navbar = () => {
-  const {user} = UseAuth();
+  const {user, loading} = UseAuth();
   const [menu, setMenu] = useState(false);
 
   const routes = [
@@ -73,9 +76,13 @@ const Navbar = () => {
             <IoMenu className="text-4xl" />
           )}
         </button>
-        {user && <div>
-          <Profile />
-          </div>}
+        {loading ? (
+          <ScaleLoader height={30}
+          width={3} color="#36d7b7" />
+        ) : !loading && user ? (
+          <Profile user={user} />
+        ) :  <Link to='/login' className="block md:hidden px-5 py-1.5 text-white bg-[#32C36C] border-2 border-[#32C36C] hover:bg-white hover:border-white hover:text-black rounded-md -skew-x-6 text-lg font-semibold md:font-bold ease-in-out duration-300">Login</Link>
+      }
       </div>
     </header>
   );
