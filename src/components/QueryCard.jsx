@@ -33,15 +33,12 @@ console.log(queryUser);
         <h3 className="text-lg font-bold text-gray-800 dark:text-white">
           {queryTitle}
         </h3>
-        <div>
-            <p>{productName}</p>
-            <p>{productBrand}</p>
+        <div className="text-gray-800 dark:text-white font-semibold flex justify-between items-center my-3">
+            <p className="bg-green-400/20 text-green-500 py-2 px-4 rounded-lg">{productName}</p>
+            <p className="bg-green-400/20 text-green-500 py-2 px-4 rounded-lg">{productBrand}</p>
         </div>
         <p className="mt-1 text-gray-500 dark:text-neutral-400">
           {boycottingReasonDetails}
-        </p>
-        <p className="mt-5 text-xs text-gray-500 dark:text-neutral-500">
-          Last updated 5 mins ago
         </p>
       </div>
     </div>

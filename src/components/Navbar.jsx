@@ -10,7 +10,7 @@ const Navbar = () => {
   const { user, loading } = UseAuth();
   const [menu, setMenu] = useState(false);
 
-  const routes = [
+  const routes1 = [
     {
       id: 1,
       name: "Home",
@@ -42,27 +42,49 @@ const Navbar = () => {
     {
       id: 3,
       name: "Recommendations For Me",
-      path: "/login",
+      path: "/recommendations-for-me",
     },
     {
       id: 4,
-      name: "Login",
-      path: "/login",
+      name: "My Queries",
+      path: "/my-queries",
+    },
+    {
+      id: 5,
+      name: "My Recommendations",
+      path: "/my-recommendations",
     },
   ];
+
+  let routes = null;
+  if(user){
+    routes = routes2;
+  }else{
+    routes= routes1
+  }
   
 
   return (
     <header className="p-2 md:p-4 sticky top-0 bg- z-50 bg-white">
-      <div className="container flex justify-between items-center h-16 mx-auto">
+      <div className="container flex justify-between items-center h-16 mx-auto relative">
+      <button
+          onClick={() => setMenu(!menu)}
+          className="flex justify-end p-4 xl:hidden"
+        >
+          {menu ? (
+            <IoClose className="text-4xl" />
+          ) : (
+            <IoMenu className="text-4xl" />
+          )}
+        </button>
         <Link
           to="/"
-          className="hidden md:flex items-center justify-center gap-2"
+          className="hidden sm:flex items-center justify-center gap-2"
         >
           <img className="w-10 h-10 md:w-12 md:h-12" src={logo} alt="" />
           <span className="font-bold text-2xl md:text-3xl">AltChoice.</span>
         </Link>
-        <ul className="items-stretch hidden space-x-6 md:flex">
+        <ul className="items-stretch hidden space-x-6 xl:flex">
           {routes.map((route) => (
             <li key={route.id}>
               <Link
@@ -77,7 +99,7 @@ const Navbar = () => {
         <ul
           className={`${
             menu
-              ? "absolute md:hidden top-24 left-4 sm:left-16 p-4 pr-40 space-y-2 duration-700 ease-in-out shadow-md rounded-md z-50 bg-white"
+              ? "absolute xl:hidden top-24 left-4 p-4 pr-20 sm:pr-40 space-y-2 duration-700 ease-in-out shadow-md rounded-md z-50 bg-white"
               : "hidden"
           } `}
         >
@@ -92,16 +114,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button
-          onClick={() => setMenu(!menu)}
-          className="flex justify-end p-4 md:hidden"
-        >
-          {menu ? (
-            <IoClose className="text-4xl" />
-          ) : (
-            <IoMenu className="text-4xl" />
-          )}
-        </button>
+        
         <div className="flex items-center gap-8">
         <input
           data-hs-theme-switch=""

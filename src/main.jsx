@@ -12,6 +12,10 @@ import ErrorPage from "./pages/ErrorPage";
 import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import AddQueries from "./pages/AddQueries";
+import MyQueries from "./pages/MyQueries";
+import MyReco from './pages/MyReco.jsx';
+import RecoForMe from './pages/RecoForMe.jsx';
+import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,8 +41,28 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-queries',
-        element: <AddQueries />
-      }
+        element: <PrivateRoute>
+        <AddQueries />
+      </PrivateRoute>
+      },
+      {
+        path: '/my-queries',
+        element: <PrivateRoute>
+        <MyQueries />
+      </PrivateRoute>
+      },
+      {
+        path: '/my-recommendations',
+        element:  <PrivateRoute>
+        <MyReco />
+      </PrivateRoute>
+      },
+      {
+        path: '/recommendations-for-me',
+        element: <PrivateRoute>
+          <RecoForMe />
+        </PrivateRoute>
+      },
     ],
   },
 ]);
