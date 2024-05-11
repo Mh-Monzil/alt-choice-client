@@ -75,7 +75,7 @@ const MyQueries = () => {
             {myQueries?.map((query) => (
               <div
                 key={query._id}
-                className="max-w-96 mx-auto flex flex-col bg-white border hover:border-white hover:shadow-xl shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 relative pb-14"
+                className="max-w-96 mx-auto flex flex-col bg-white border hover:border-white hover:shadow-xl shadow-sm rounded-xl hover:rounded-2xl dark:hover:border-white dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 relative pb-14"
               >
                 <img
                   className="w-full h-80 rounded-t-xl"
@@ -96,11 +96,11 @@ const MyQueries = () => {
                   <p className="pt-1 text-gray-500 dark:text-neutral-400">
                     {query?.boycottingReasonDetails.slice(0,100)}...
                   </p>
-                  <p className="font-medium text-sm "><span className="font-semibold text-base">Poster On :</span> {query?.queryUser?.currentDateTime}</p>
+                  <p className="font-medium text-sm text-gray-800 dark:text-white"><span className="font-semibold text-base">Posted On :</span> {query?.queryUser?.currentDateTime}</p>
                   <div className="flex items-center flex-wrap justify-between mt-4 absolute bottom-4 left-0 w-full px-4">
-                    <Link to={`/view-details/${query?._id}`} className="bg-cyan-600 text-white font-semibold py-2 px-3 rounded-sm -skew-x-6 hover:bg-[#253745] transition-all duration-300 mx-auto">View Details</Link>
-                    <Link className="bg-teal-500 text-white font-semibold py-2 px-3 rounded-sm -skew-x-6 hover:bg-[#253745] transition-all duration-300 mx-auto">Update</Link>
-                    <Link className="bg-red-500 text-white font-semibold py-2 px-3 rounded-sm -skew-x-6 hover:bg-[#253745] transition-all duration-300  mx-auto">Delete</Link>
+                    <Link to={`/view-details/${query?._id}`} className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300 mx-auto">View Details</Link>
+                    <Link to={`/update-query/${query?._id}`} className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300 mx-auto">Update</Link>
+                    <Link className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300  mx-auto">Delete</Link>
                   </div>
                 </div>
               </div>
@@ -117,6 +117,9 @@ const MyQueries = () => {
           </div>
         )}
       </div>
+
+
+        
     </>
   );
 };
