@@ -16,6 +16,7 @@ import MyQueries from "./pages/MyQueries";
 import MyReco from './pages/MyReco.jsx';
 import RecoForMe from './pages/RecoForMe.jsx';
 import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
+import ViewDetailsQuery from "./components/ViewDetailsQuery.jsx";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
           <RecoForMe />
         </PrivateRoute>
       },
+      {
+        path: '/view-details/:id',
+        element: <ViewDetailsQuery />,
+        loader: ({params}) => fetch(`http://localhost:5000/view-details/${params.id}`)
+      }
     ],
   },
 ]);
