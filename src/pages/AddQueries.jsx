@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bgImage from '../assets/queries.png';
 import UseAuth from "../hooks/useAuth";
 import axios from 'axios';
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 
 const AddQueries = () => {
     const {user} = UseAuth();
+    const navigate = useNavigate();
 
     const handleAddQuery = async (e) => {
         e.preventDefault();
@@ -33,10 +34,13 @@ const AddQueries = () => {
             const {data} = axios.post('http://localhost:5000/query', queryData);
             console.log(data);
             toast.success("Query Added Successfully")
+            navigate('/my-queries')
         }catch(err){
             console.log(err);
             toast.error(err?.message)
         }
+
+        form.reset();
     }
 
 

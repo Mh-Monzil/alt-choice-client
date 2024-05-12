@@ -35,18 +35,16 @@ const MyQueries = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delete-query/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
+        const {data} = await axios.delete(`http://localhost:5000/delete-query/${id}`)
+      // .then((res) => res.json())
+      // .then((data) => {
         console.log(data);
         const remaining = myQueries?.filter((item) => item._id !== id);
         setMyQueries(remaining);
         
-      });
+      // });
         Swal.fire({
           title: "Deleted!",
           text: "Craft item has been deleted.",
