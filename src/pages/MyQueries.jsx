@@ -4,6 +4,7 @@ import UseAuth from "../hooks/useAuth";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 const MyQueries = () => {
   const { user, loading } = UseAuth();
@@ -23,6 +24,41 @@ const MyQueries = () => {
     setMyQueries(data);
   };
   console.log(myQueries);
+
+  const handleDelete = (id) => {
+    console.log("delete");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/delete-query/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const remaining = myQueries?.filter((item) => item._id !== id);
+        setMyQueries(remaining);
+        
+      });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Craft item has been deleted.",
+          icon: "success"
+        });
+      }
+    });
+  };
+
+
+
+
 
   return (
     <>
@@ -100,7 +136,7 @@ const MyQueries = () => {
                   <div className="flex items-center flex-wrap justify-between mt-4 absolute bottom-4 left-0 w-full px-4">
                     <Link to={`/view-details/${query?._id}`} className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300 mx-auto">View Details</Link>
                     <Link to={`/update-query/${query?._id}`} className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300 mx-auto">Update</Link>
-                    <Link className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300  mx-auto">Delete</Link>
+                    <Link onClick={() => handleDelete(query?._id)} className=" text-white font-medium py-2 px-3 rounded-md bg-[#253745] transition-all duration-300  mx-auto">Delete</Link>
                   </div>
                 </div>
               </div>
