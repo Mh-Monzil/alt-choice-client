@@ -13,8 +13,8 @@ import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import AddQueries from "./pages/AddQueries";
 import MyQueries from "./pages/MyQueries";
-import MyReco from './pages/MyReco.jsx';
-import RecoForMe from './pages/RecoForMe.jsx';
+import MyReco from "./pages/MyReco.jsx";
+import RecoForMe from "./pages/RecoForMe.jsx";
 import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
 import ViewDetailsQuery from "./components/ViewDetailsQuery.jsx";
 import UpdateQuery from "./components/UpdateQuery.jsx";
@@ -32,8 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/queries",
         element: <Queries />,
-        loader: () => fetch('http://localhost:5000/query')
-
+        loader: () => fetch("http://localhost:5000/query"),
       },
       {
         path: "/login",
@@ -44,39 +43,53 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/add-queries',
-        element: <PrivateRoute>
-        <AddQueries />
-      </PrivateRoute>
+        path: "/add-queries",
+        element: (
+          <PrivateRoute>
+            <AddQueries />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/my-queries',
-        element: <PrivateRoute>
-        <MyQueries />
-      </PrivateRoute>
+        path: "/my-queries",
+        element: (
+          <PrivateRoute>
+            <MyQueries />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/my-recommendations',
-        element:  <PrivateRoute>
-        <MyReco />
-      </PrivateRoute>
+        path: "/my-recommendations",
+        element: (
+          <PrivateRoute>
+            <MyReco />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/recommendations-for-me',
-        element: <PrivateRoute>
-          <RecoForMe />
-        </PrivateRoute>
+        path: "/recommendations-for-me",
+        element: (
+          <PrivateRoute>
+            <RecoForMe />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/view-details/:id',
-        element: <ViewDetailsQuery />,
-        loader: ({params}) => fetch(`http://localhost:5000/query/${params.id}`)
+        path: "/view-details/:id",
+        element: (
+          <PrivateRoute>
+            <ViewDetailsQuery />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/query/${params.id}`),
       },
       {
-        path: '/update-query/:id',
+        path: "/update-query/:id",
         element: <UpdateQuery />,
-        loader: ({params}) => fetch(`http://localhost:5000/query/${params.id}`)
-      }
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/query/${params.id}`),
+      },
     ],
   },
 ]);

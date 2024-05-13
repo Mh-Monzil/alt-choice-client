@@ -78,6 +78,7 @@ const AddQueries = () => {
             name="product_name"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
             type="text"
+            required
           />
         </div>
 
@@ -95,6 +96,7 @@ const AddQueries = () => {
             name="product_brand"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
             type="text"
+            required
           />
         </div>
 
@@ -112,6 +114,7 @@ const AddQueries = () => {
             name="product_image"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
             type="text"
+            required
           />
         </div>
 
@@ -129,6 +132,7 @@ const AddQueries = () => {
             name="query_title"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
             type="text"
+            required
           />
         </div>
 
@@ -146,6 +150,7 @@ const AddQueries = () => {
             name="boycotting_reason_details"
             className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-green-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-green-300"
             type="text"
+            required
           />
         </div>
 
