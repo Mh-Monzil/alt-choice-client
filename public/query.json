@@ -21,13 +21,6 @@
       "BoycottingReasonDetails": "It's nearly impossible to make simple repairs on this laptop. Anyone else frustrated with the anti-repair policies?"
     },
     {
-      "ProductName": "Fitbit Charge 4",
-      "ProductBrand": "Fitbit",
-      "ProductImageURL": "https://example.com/fitbit-charge-4.jpg",
-      "QueryTitle": "How safe is our health data with Fitbit?",
-      "BoycottingReasonDetails": "I'm concerned about the privacy of my health data. Has anyone had issues with data sharing here?"
-    },
-    {
       "ProductName": "Pixel Buds A-Series",
       "ProductBrand": "Google",
       "ProductImageURL": "https://example.com/pixel-buds-a.jpg",
