@@ -9,6 +9,7 @@ import Swal from 'sweetalert2'
 const MyQueries = () => {
   const { user, loading } = UseAuth();
   const [myQueries, setMyQueries] = useState([]);
+  const [sortedQueries, setSortedQueries] = useState([]);
   console.log(user);
 
   useEffect(() => {
@@ -25,8 +26,16 @@ const MyQueries = () => {
   };
   console.log(myQueries);
 
+  useEffect(() => {
+    setSortedQueries([...myQueries].sort((a, b) => new Date(b.queryUser.currentDateTime) - new Date(a.queryUser.currentDateTime)));
+}, [myQueries])
+console.log(sortedQueries);
+
+  // const array = myQueries.map(query => query.queryUser.currentDateTime);
+  // console.log(array);
+  // console.log("sort", array.sort((a,b) => new Date(b) - new Date(a)));
+
   const handleDelete = (id) => {
-    console.log("delete");
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -38,13 +47,10 @@ const MyQueries = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const {data} = await axios.delete(`http://localhost:5000/delete-query/${id}`)
-      // .then((res) => res.json())
-      // .then((data) => {
         console.log(data);
         const remaining = myQueries?.filter((item) => item._id !== id);
         setMyQueries(remaining);
-        
-      // });
+
         Swal.fire({
           title: "Deleted!",
           text: "Craft item has been deleted.",
@@ -106,10 +112,10 @@ const MyQueries = () => {
         {loading && <ScaleLoader height={30} width={3} color="#36d7b7" />}
         {user && myQueries.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
-            {myQueries?.map((query) => (
+            {sortedQueries?.map((query) => (
               <div
                 key={query._id}
-                className="max-w-96 mx-auto flex flex-col bg-white border hover:border-white hover:shadow-xl shadow-sm rounded-xl hover:rounded-2xl dark:hover:border-white dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 relative pb-14"
+                className="max-w-96 min-w-96 mx-auto flex flex-col bg-white border hover:border-white hover:shadow-xl shadow-sm rounded-xl hover:rounded-2xl dark:hover:border-white dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 relative pb-14"
               >
                 <img
                   className="w-full h-80 rounded-t-xl"
