@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/Firebase.init";
+import axios from 'axios'
 
 export const AuthContext = createContext(null);
 
@@ -34,9 +35,11 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logOut = () => {
+  const logOut = async () => {
     // setLoading(true);
     window.location.reload();
+    const {data} = await axios('http://localhost:5000/logout', {withCredentials: true})
+    console.log(data);
     return signOut(auth);
   };
 
