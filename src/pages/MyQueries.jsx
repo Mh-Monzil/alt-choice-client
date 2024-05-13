@@ -53,7 +53,7 @@ console.log(sortedQueries);
 
         Swal.fire({
           title: "Deleted!",
-          text: "Craft item has been deleted.",
+          text: "Query has been deleted.",
           icon: "success"
         });
       }
