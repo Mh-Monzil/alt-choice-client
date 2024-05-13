@@ -5,6 +5,7 @@ import logo from "../assets/alt.png";
 import UseAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
+import axios from 'axios';
 
 const Register = () => {
   const { user, createUser, updateUserProfile, setUser } =
@@ -33,6 +34,9 @@ const Register = () => {
       console.log(result);
       await updateUserProfile(name, photo);
       setUser({ ...result?.user, photoURL: photo, displayName: name });
+
+      const {data} = await axios.post("http://localhost:5000/jwt", {email: result?.user?.email}, {withCredentials: true})
+
       toast.success("Sign Up Successful");
     } catch (err) {
       console.log(err);
