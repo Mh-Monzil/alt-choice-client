@@ -18,7 +18,7 @@ const MyQueries = () => {
 
   const getMyQuery = async () => {
     const { data } = await axios(
-      `http://localhost:5000/my-query/${user?.email}`
+      `http://localhost:5000/my-query/${user?.email}`,{withCredentials: true}
     );
 
     console.log(data);

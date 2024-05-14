@@ -6,9 +6,9 @@ import Swal from "sweetalert2";
 const MyReco = () => {
     const {user} = UseAuth();
     const [myRecommendation, setMyRecommendation] = useState([]);
-
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/recommendations/user-email/${user?.email}`)
+        fetch(`http://localhost:5000/recommendations/user-email/${user?.email}`, {credentials: 'include'})
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -55,31 +55,31 @@ const MyReco = () => {
                   <tr>
                     <th
                       scope="col"
-                      className="px-6 py-3  text-xs font-medium text-gray-500 uppercase dark:text-neutral-500 text-center"
+                      className="px-6 py-3  text-xs font-medium text-gray-500 uppercase dark:text-neutral-800 text-center"
                     >
                       Name
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-800"
                     >
                       Email
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-800"
                     >
                       Product Name
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-800"
                     >
                       Date
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-800"
                     >
                       Action
                     </th>
@@ -87,24 +87,24 @@ const MyReco = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
                   {
-                    myRecommendation.map(reco => <tr key={reco._id} className="hover:bg-gray-100 dark:hover:bg-neutral-700">
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                    myRecommendation?.map(reco => <tr key={reco._id} className="">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 ">
                       {reco?.userName}
                     </td>
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 ">
                       {reco?.userEmail}
                     </td>
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 ">
                     {reco?.productName}
                     </td>
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 ">
                     {reco?.currentTimeStamp}
                     </td>
                     <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                       onClick={() => handleDelete(reco?._id, reco?.queryId)}
                         type="button"
-                        className="mx-auto inline-flex items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent text-white bg-red-500 p-2 hover:bg disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400"
+                        className="mx-auto inline-flex items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent text-white bg-red-500 p-2 hover:bg disabled:opacity-50 disabled:pointer-events-none "
                       >
                         Delete
                       </button>
