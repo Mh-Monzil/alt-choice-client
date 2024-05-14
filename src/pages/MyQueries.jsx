@@ -18,7 +18,7 @@ const MyQueries = () => {
 
   const getMyQuery = async () => {
     const { data } = await axios(
-      `http://localhost:5000/my-query/${user?.email}`,{withCredentials: true}
+      `https://alt-choice-server.vercel.app/my-query/${user?.email}`,{withCredentials: true}
     );
 
     console.log(data);
@@ -46,7 +46,7 @@ console.log(sortedQueries);
       confirmButtonText: "Yes, delete it!"
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const {data} = await axios.delete(`http://localhost:5000/delete-query/${id}`)
+        const {data} = await axios.delete(`https://alt-choice-server.vercel.app/delete-query/${id}`)
         console.log(data);
         const remaining = myQueries?.filter((item) => item._id !== id);
         setMyQueries(remaining);

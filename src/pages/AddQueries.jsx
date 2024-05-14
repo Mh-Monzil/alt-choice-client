@@ -31,7 +31,7 @@ const AddQueries = () => {
         console.log(queryData);
 
         try{
-            const {data} = axios.post('http://localhost:5000/query', queryData);
+            const {data} = axios.post('https://alt-choice-server.vercel.app/query', queryData);
             console.log(data);
             toast.success("Query Added Successfully")
             navigate('/my-queries')

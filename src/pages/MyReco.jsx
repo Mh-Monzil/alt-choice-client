@@ -6,9 +6,9 @@ import Swal from "sweetalert2";
 const MyReco = () => {
     const {user} = UseAuth();
     const [myRecommendation, setMyRecommendation] = useState([]);
-    
+
     useEffect(() => {
-        fetch(`http://localhost:5000/recommendations/user-email/${user?.email}`, {credentials: 'include'})
+        fetch(`https://alt-choice-server.vercel.app/recommendations/user-email/${user?.email}`, {credentials: 'include'})
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -27,12 +27,12 @@ const MyReco = () => {
           confirmButtonText: "Yes, delete it!"
         }).then(async (result) => {
           if (result.isConfirmed) {
-            const {data} = await axios.delete(`http://localhost:5000/delete-recommendation/${id}`)
+            const {data} = await axios.delete(`https://alt-choice-server.vercel.app/delete-recommendation/${id}`)
             console.log(data);
             const remaining = myRecommendation?.filter((item) => item._id !== id);
             setMyRecommendation(remaining);
 
-            const {data2 } = await axios.post(`http://localhost:5000/decrement/${queryId}`)
+            const {data2 } = await axios.post(`https://alt-choice-server.vercel.app/decrement/${queryId}`)
             console.log(data2);
     
             Swal.fire({

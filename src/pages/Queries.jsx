@@ -6,6 +6,21 @@ const Queries = () => {
   const [allQuery, setAllQuery] = useState(query);
   // console.log(query);
   console.log(allQuery);
+  const [layout, setLayout] = useState(true);
+
+  if(layout){
+    console.log(true);
+  }else{
+    console.log(false);
+  }
+
+  const toggleLayout = (value) => {
+    if(value === "grid-1"){
+      setLayout(" sm:grid-cols-2 lg:grid-cols-3")
+    }else{
+      setLayout(" sm:grid-cols-1 lg:grid-cols-2")
+    }
+  }
 
   useEffect(() => {
     setAllQuery(
@@ -20,13 +35,18 @@ const Queries = () => {
   console.log(allQuery);
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <h2 className="font-semibold text-4xl text-center">All query</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
+      <div className="text-gray-800 dark:text-white font-semibold flex justify-end items-center gap-6 mt-12 px-6">
+        <button onClick={() => toggleLayout("grid-1")} className="bg-green-400/20 text-green-500 py-2 px-4 rounded-lg border border-green-400">layout-1</button>
+        <button onClick={() => toggleLayout("grid-2")} className="bg-green-400/20 text-green-500 py-2 px-4 rounded-lg border border-green-400">layout-2</button>
+        
+      </div>
+      <div className={`${layout} grid grid-cols-1  gap-8 mt-16 `}>
         {allQuery.map((query) => (
           <div
             key={query._id}
-            className="max-w-96 min-w-96 mx-auto flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
+            className="max-w-96 mx-auto flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70"
           >
             <div className="p-3 text-gray-800 dark:text-white flex items-center gap-4">
               <div>

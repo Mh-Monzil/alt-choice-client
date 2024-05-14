@@ -11,7 +11,7 @@ const RecentQueries = () => {
     },[])
 
     const getQuery = async () => {
-        const {data} = await axios('http://localhost:5000/query')
+        const {data} = await axios('https://alt-choice-server.vercel.app/query')
         setQueryData(data.slice(-6).reverse())
     }
 

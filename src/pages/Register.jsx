@@ -35,7 +35,7 @@ const Register = () => {
       await updateUserProfile(name, photo);
       setUser({ ...result?.user, photoURL: photo, displayName: name });
 
-      const {data} = await axios.post("http://localhost:5000/jwt", {email: result?.user?.email}, {withCredentials: true})
+      const {data} = await axios.post("https://alt-choice-server.vercel.app/jwt", {email: result?.user?.email}, {withCredentials: true})
 
       toast.success("Sign Up Successful");
     } catch (err) {

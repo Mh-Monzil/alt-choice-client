@@ -7,7 +7,7 @@ const RecoForMe = () => {
     const [recoForMe, setRecoForMe] = useState([]);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/recommendations/query-user/${user?.email}`, {credentials: 'include'})
+      fetch(`https://alt-choice-server.vercel.app/recommendations/query-user/${user?.email}`, {credentials: 'include'})
       .then(res => res.json())
       .then(data => {
           console.log(data);
@@ -26,25 +26,25 @@ const RecoForMe = () => {
                   <tr>
                     <th
                       scope="col"
-                      className="px-6 py-3  text-xs font-medium text-gray-500 uppercase dark:text-neutral-500 text-center"
+                      className="px-6 py-3  text-xs font-medium text-gray-500 uppercase dark:text-neutral-900 text-center"
                     >
                       Name
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-900"
                     >
                       Email
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-900"
                     >
                       Product Name
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-500"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-neutral-900"
                     >
                       Date
                     </th>
@@ -52,17 +52,17 @@ const RecoForMe = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
                   {
-                    recoForMe.map(reco => <tr key={reco._id} className="hover:bg-gray-100 dark:hover:bg-neutral-700">
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                    recoForMe.map(reco => <tr key={reco._id} className="hover:bg-gray-100 dark:hover:bg-neutral-300">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-600">
                       {reco?.recommenderName}
                     </td>
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-600">
                       {reco?.recommenderEmail}
                     </td>
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-600">
                     {reco?.productName}
                     </td>
-                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                    <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-600">
                     {reco?.currentTimeStamp}
                     </td>
                   </tr>)

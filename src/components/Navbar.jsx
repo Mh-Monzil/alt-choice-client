@@ -57,17 +57,16 @@ const Navbar = () => {
   ];
 
   let routes = null;
-  if(user){
+  if (user) {
     routes = routes2;
-  }else{
-    routes= routes1
+  } else {
+    routes = routes1;
   }
-  
 
   return (
     <header className="p-2 md:p-4 sticky top-0 bg- z-50 bg-white">
       <div className="container flex justify-between items-center h-16 mx-auto relative">
-      <button
+        <button
           onClick={() => setMenu(!menu)}
           className="flex justify-end p-4 xl:hidden"
         >
@@ -114,30 +113,30 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        
+
         <div className="flex items-center gap-8">
-        <input
-          data-hs-theme-switch=""
-          className="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-green-300 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
+          <input
+            data-hs-theme-switch=""
+            className="relative w-[3.25rem] h-7 bg-gray-100 checked:bg-none checked:bg-green-300 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200 ring-1 ring-transparent focus:border-gray-700 focus:ring-gray-700 focus:outline-none appearance-none
 
 before:inline-block before:size-6 before:bg-white checked:before:bg-green-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
 
 after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:start-1.5 checked:after:end-auto"
-          type="checkbox"
-          id="darkSwitch"
-        />
-        {loading ? (
-          <ScaleLoader height={30} width={3} color="#36d7b7" />
-        ) : !loading && user ? (
-          <Profile user={user} />
-        ) : (
-          <Link
-            to="/login"
-            className="block md:hidden px-5 py-1.5 text-white bg-[#32C36C] border-2 border-[#32C36C] hover:bg-white hover:border-white hover:text-black rounded-md -skew-x-6 text-lg font-semibold md:font-bold ease-in-out duration-300"
-          >
-            Login
-          </Link>
-        )}
+            type="checkbox"
+            id="darkSwitch"
+          />
+          {loading ? (
+            <ScaleLoader height={30} width={3} color="#36d7b7" />
+          ) : !loading && user ? (
+            <Profile user={user} />
+          ) : (
+            <Link
+              to="/login"
+              className="block md:hidden px-5 py-1.5 text-white bg-[#32C36C] border-2 border-[#32C36C] hover:bg-white hover:border-white hover:text-black rounded-md -skew-x-6 text-lg font-semibold md:font-bold ease-in-out duration-300"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </header>

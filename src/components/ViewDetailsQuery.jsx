@@ -60,7 +60,7 @@ const ViewDetailsQuery = () => {
       toast.error("Query creator can't recommend");
     } else {
       const { data } = await axios.post(
-        "http://localhost:5000/recommendations",
+        "https://alt-choice-server.vercel.app/recommendations",
         recommendations
       );
       toast.success("Recommendation successful");
@@ -72,7 +72,7 @@ const ViewDetailsQuery = () => {
   };
 
   const increment = async () => {
-    const { data } = await axios.post(`http://localhost:5000/increment/${id}`);
+    const { data } = await axios.post(`https://alt-choice-server.vercel.app/increment/${id}`);
   };
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const ViewDetailsQuery = () => {
   }, []);
 
   const refetch = async () => {
-    const { data } = await axios(`http://localhost:5000/query/${id}`);
+    const { data } = await axios(`https://alt-choice-server.vercel.app/query/${id}`);
     setSingleQuery(data);
   };
 
@@ -89,7 +89,7 @@ const ViewDetailsQuery = () => {
   }, []);
 
   const recommendComment = async () => {
-    const { data } = await axios(`http://localhost:5000/recommendations/${id}`);
+    const { data } = await axios(`https://alt-choice-server.vercel.app/recommendations/${id}`);
     setComments(data);
   };
 

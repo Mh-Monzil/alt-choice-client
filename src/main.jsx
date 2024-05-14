@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/queries",
         element: <Queries />,
-        loader: () => fetch("http://localhost:5000/query"),
+        loader: () => fetch("https://alt-choice-server.vercel.app/query"),
       },
       {
         path: "/login",
@@ -82,13 +82,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/query/${params.id}`),
+          fetch(`https://alt-choice-server.vercel.app/query/${params.id}`),
       },
       {
         path: "/update-query/:id",
         element: <UpdateQuery />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/query/${params.id}`),
+          fetch(`https://alt-choice-server.vercel.app/query/${params.id}`),
       },
     ],
   },

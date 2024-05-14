@@ -20,7 +20,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try{
         const result = await googleLogin();
-        const {data} = await axios.post("http://localhost:5000/jwt", {email: result?.user?.email}, {withCredentials: true})
+        const {data} = await axios.post("https://alt-choice-server.vercel.app/jwt", {email: result?.user?.email}, {withCredentials: true})
         console.log(data);
 
         toast.success("Sign In Successful");
@@ -43,7 +43,7 @@ const Login = () => {
       const result = await loginUser(email, password);
       console.log(result);
 
-      const {data} = await axios.post("http://localhost:5000/jwt", {email: result?.user?.email}, {withCredentials: true})
+      const {data} = await axios.post("https://alt-choice-server.vercel.app/jwt", {email: result?.user?.email}, {withCredentials: true})
       console.log(data);
       
 

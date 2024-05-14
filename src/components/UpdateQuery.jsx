@@ -41,7 +41,7 @@ const UpdateQuery = () => {
     console.log(queryData);
 
     try {
-      const { data } = await axios.put(`http://localhost:5000/update-query/${_id}`, queryData);
+      const { data } = await axios.put(`https://alt-choice-server.vercel.app/update-query/${_id}`, queryData);
       console.log(data);
       if(data.modifiedCount > 0) {
         toast.success("Query Updated Successfully");
