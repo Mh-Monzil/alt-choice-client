@@ -1,9 +1,6 @@
 import bgImage1 from "../assets/banner/cbanner1.png";
 import bgImage2 from "../assets/banner/cbanner2.png";
 import bgImage3 from "../assets/banner/cbanner3.png";
-import watch from "../assets/banner/watch.png";
-import monitor from "../assets/banner/monitor.png";
-import headphone from "../assets/banner/headphone.png";
 import { useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,7 +25,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="h-[100vh] lg:h-[70vh]">
+    <div className="h-[70vh] lg:h-[65vh]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -45,135 +42,88 @@ const Banner = () => {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper h-full rounded-md -z-10"
       >
-        <SwiperSlide className="relative">
-          <div
-            style={{
+        <SwiperSlide>
+          <div style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage1})`,
-            }}
-            className=" flex flex-col-reverse lg:flex-row items-center justify-center md:justify-evenly gap8 w-full h-full text-white  bg-cover bg-center -z-10 container px-6 py-16 mx-auto"
-          >
-            <div className="items-center lg:flex">
-              <div
-              data-aos="fade-right"
-              data-aos-duration="400"
-              data-aos-easing="ease-in-out"
-              className="w-full lg:w-1/2">
-                <div className="lg:max-w-lg space-y-10 text-center md:text-start">
-                  <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-5xl">
-                    Explore Alternative Gadget
-                    <span className="text-green-400 ">Choices</span>
-                  </h1>
+            }} className="h-full bg-center bg-cover">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+              <div>
+                <h1 className="block text-3xl font-bold text-white sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
+                Explore Alternative Gadget Choices
+                </h1>
+                <p className="mt-3 text-lg text-white dark:text-neutral-400">
+                Navigate through a curated selection of eco-conscious gadgets. Find sustainable, innovative alternatives to mainstream technology products.
+                </p>
 
-                  <div className="flex justify-center md:justify-start">
-                    <Link
-                      to="/queries"
-                      className="px-4 py-3 md:px-7 text-white bg-[#32C36C] border-2 border-[#32C36C] hover:bg-white hover:border-white hover:text-black rounded-md -skew-x-6 text-lg font-semibold md:font-bold ease-in-out duration-300"
-                    >
-                      See All Queries
-                    </Link>
-                  </div>
-                </div>
+                <div className="mt-7 grid gap-3 w-full sm:inline-flex"></div>
               </div>
 
-              <div
-              data-aos="fade-left"
-              data-aos-duration="400"
-              data-aos-easing="ease-in-out"
-              className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+              <div className="relative ms-4">
                 <img
-                  className="w-80 h-80 sm:w-96 sm:h-96 lg:max-w-3xl"
-                  src={watch}
+                  className="w-full rounded-md"
+                  src="https://i.ibb.co/Zcn01NG/eco-4th-gen-removebg-preview.png"
+                  alt="Image Description"
                 />
+                <div className="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
               </div>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="relative">
-          <div
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage2})`,
-            }}
-            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center "
-          >
-            <div className="items-center lg:flex">
-              <div
-              data-aos="fade-right"
-              data-aos-duration="400"
-              data-aos-easing="ease-in-out"
-              className="w-full lg:w-1/2">
-                <div className="lg:max-w-lg space-y-10 text-center md:text-start">
-                  <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-5xl">
-                  Uncover Unique Gadget 
-                    <span className="text-green-400 ">Alternatives</span>
-                  </h1>
+        <SwiperSlide>
+          <div style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage1})`,
+            }} className="h-full bg-center bg-cover">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+              <div>
+                <h1 className="block text-3xl font-bold text-white sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
+                Uncover Unique Gadget Alternatives
+                </h1>
+                <p className="mt-3 text-lg text-white dark:text-neutral-400">
+                Dive into a curated selection of innovative gadget alternatives. Find unique, eco-friendly tech solutions tailored to your lifestyle needs.
+                </p>
 
-                  <div className="flex justify-center md:justify-start">
-                    <Link
-                      to="/queries"
-                      className="px-4 py-3 md:px-7 text-white bg-[#32C36C] border-2 border-[#32C36C] hover:bg-white hover:border-white hover:text-black rounded-md -skew-x-6 text-lg font-semibold md:font-bold ease-in-out duration-300"
-                    >
-                      See All Queries
-                    </Link>
-                  </div>
-                </div>
+                <div className="mt-7 grid gap-3 w-full sm:inline-flex"></div>
               </div>
 
-              <div
-              data-aos="fade-left"
-              data-aos-duration="400"
-              data-aos-easing="ease-in-out"
-              className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+              <div className="relative ms-4">
                 <img
-                  className="w-80 h-80 sm:w-96 sm:h-96 lg:max-w-3xl"
-                  src={watch}
+                  className="w-full rounded-md"
+                  src="https://i.ibb.co/tZ0nCm0/s22ultra-removebg-preview.png"
+                  alt="Image Description"
                 />
+                <div className="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
               </div>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="relative">
-          <div
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage3})`,
-            }}
-            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center "
-          >
-            <div className="items-center lg:flex">
-              <div
-              data-aos="fade-right"
-              data-aos-duration="400"
-              data-aos-easing="ease-in-out"
-              className="w-full lg:w-1/2">
-                <div className="lg:max-w-lg space-y-10 text-center md:text-start">
-                  <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-5xl">
-                    Discover Better Alternatives for Your Tech 
-                    <span className="text-green-400 ">Needs</span>
-                  </h1>
+        <SwiperSlide>
+          <div style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage1})`,
+            }} className="h-full bg-center bg-cover">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+              <div>
+                <h1 className="block text-3xl font-bold text-white sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
+                Discover Better Alternatives for Your Tech Needs
+                </h1>
+                <p className="mt-3 text-lg text-white dark:text-neutral-400">
+                Uncover superior tech options tailored to enhance efficiency and sustainability. Ideal for tech enthusiasts seeking smart, eco-conscious choices.
+                </p>
 
-                  <div className="flex justify-center md:justify-start">
-                    <Link
-                      to="/queries"
-                      className="px-4 py-3 md:px-7 text-white bg-[#32C36C] border-2 border-[#32C36C] hover:bg-white hover:border-white hover:text-black rounded-md -skew-x-6 text-lg font-semibold md:font-bold ease-in-out duration-300"
-                    >
-                      See All Queries
-                    </Link>
-                  </div>
-                </div>
+                <div className="mt-7 grid gap-3 w-full sm:inline-flex"></div>
               </div>
 
-              <div
-              data-aos="fade-left"
-              data-aos-duration="400"
-              data-aos-easing="ease-in-out"
-              className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+              <div className="relative ms-4">
                 <img
-                  className="w-80 h-80 sm:w-96 sm:h-96 lg:max-w-3xl"
-                  src={watch}
+                  className="w-full rounded-md"
+                  src="https://i.ibb.co/dDfKpqG/xbox-removebg-preview.png"
+                  alt="Image Description"
                 />
+                <div className="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
               </div>
             </div>
           </div>
         </SwiperSlide>
+
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}></svg>
           <span ref={progressContent}></span>

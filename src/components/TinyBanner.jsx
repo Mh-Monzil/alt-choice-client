@@ -19,7 +19,7 @@ const TinyBanner = () => {
             </div>
 
             <div className="text-center">
-              <Link to='/queries' className="inline-flex justify-center items-center gap-x-3 text-center  bg-gradient-to-tl from-green-600 to-cyan-600 shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-lg font-semibold rounded-full focus:outline-none focus:ring-1 focus:ring-gray-600 py-3 px-7 dark:focus:ring-offset-gray-800" href="#">
+              <Link to='/queries' className="inline-flex justify-center items-center gap-x-3 text-center  bg-gradient-to-tl from-green-600 to-cyan-600 shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-lg font-semibold rounded-full focus:outline-none focus:ring-1 focus:ring-gray-600 py-3 px-7 dark:focus:ring-offset-gray-800" >
                 All Queries
               </Link>
             </div>

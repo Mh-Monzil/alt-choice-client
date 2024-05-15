@@ -15,7 +15,7 @@ console.log(queryUser);
 
 
   return (
-    <div className="max-w-96 min-w-96 mx-auto flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+    <div className="max-w-96 mx-auto flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
       <div className="p-3 text-gray-800 dark:text-white flex items-center gap-4">
         <div>
             <img className="w-12  h-12 rounded-full" src={queryUser?.image} alt="" />

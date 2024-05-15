@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     const {data} = await axios('https://alt-choice-server.vercel.app/logout', {withCredentials: true})
     console.log(data);
-
+    setLoading(false);
     return signOut(auth);
   };
 
